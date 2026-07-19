@@ -33,6 +33,10 @@ function FeatureIcon({ type }: { type: string }) {
   return <span aria-hidden="true" className={`feature-icon ${type}`}><i /></span>;
 }
 
+function WhatsAppIcon() {
+  return <span aria-hidden="true" className="whatsapp-icon"><i /></span>;
+}
+
 export default function Home() {
   const year = new Date().getFullYear();
 
@@ -49,7 +53,7 @@ export default function Home() {
             <a href="#como-funciona">Como funciona</a>
             <a href="#licenca">Licença</a>
           </div>
-          <a className="nav-cta" href={siteConfig.whatsappUrl} target="_blank" rel="noreferrer">Garantir licença <Arrow /></a>
+          <a className="nav-cta whatsapp-nav" href={siteConfig.whatsappUrl} target="_blank" rel="noreferrer"><WhatsAppIcon /> Garantir licença <Arrow /></a>
         </nav>
       </header>
 
@@ -61,7 +65,9 @@ export default function Home() {
             <h1>Comece sua API com <em>segurança</em>, sem montar tudo do zero.</h1>
             <p className="lead">Uma fundação pronta para Node.js, NestJS, PostgreSQL e Prisma — feita para você aprender construindo e avançar com mais clareza.</p>
             <div className="hero-actions">
-              <a className="button primary" href={siteConfig.whatsappUrl} target="_blank" rel="noreferrer">Quero minha licença por R$147 <Arrow /></a>
+              <a className="button primary hero-whatsapp-cta" href={siteConfig.whatsappUrl} target="_blank" rel="noreferrer">
+                <span><span className="cta-main"><WhatsAppIcon /> Garantir licença por R$147 <Arrow /></span><small>Pagamento único • Licença para 1 projeto</small></span>
+              </a>
               <a className="button secondary" href="#incluido">Ver o que está incluído</a>
             </div>
             <ul className="hero-proof" aria-label="Resumo da oferta">
@@ -99,7 +105,7 @@ export default function Home() {
 
       <section className="license-section" id="licenca"><div className="container license reveal"><div><p className="section-kicker">Licença comercial</p><h2>Clara, simples, sem letras pequenas.</h2></div><div className="license-points"><p><b>✓</b> Pagamento único</p><p><b>✓</b> Um projeto por licença</p><p><b>✓</b> Pode estudar, adaptar e integrar</p><p><b>—</b> Não pode revender, redistribuir ou transformar em template concorrente</p></div></div></section>
 
-      <section className="container offer" id="oferta"><div className="offer-panel reveal"><div className="offer-copy"><p className="section-kicker">Sua fundação começa aqui</p><h2>Security Foundation <em>Kit</em></h2><p>Menos tempo montando a base. Mais contexto para construir o seu produto.</p></div><div className="offer-price"><div><span>R$</span><strong>147</strong></div><p>pagamento único</p></div><ul className="offer-list"><li>Licença para 1 projeto</li><li>Código-fonte completo</li><li>Documentação passo a passo</li></ul><a className="button primary full" href={siteConfig.whatsappUrl} target="_blank" rel="noreferrer">Garantir minha licença <Arrow /></a><p className="secure-note"><span aria-hidden="true">✓</span> Acesso enviado após a confirmação da compra</p></div></section>
+      <section className="container offer" id="oferta"><div className="offer-panel reveal"><div className="offer-copy"><p className="section-kicker">Sua fundação começa aqui</p><h2>Security Foundation <em>Kit</em></h2><p>Menos tempo montando a base. Mais contexto para construir o seu produto.</p></div><div className="offer-price"><div><span>R$</span><strong>147</strong></div><p>pagamento único</p></div><ul className="offer-list"><li>Licença para 1 projeto</li><li>Código-fonte completo</li><li>Documentação passo a passo</li></ul><a className="button primary full offer-whatsapp-cta" href={siteConfig.whatsappUrl} target="_blank" rel="noreferrer"><WhatsAppIcon /> Garantir minha licença <Arrow /></a><p className="secure-note"><span aria-hidden="true">✓</span> Acesso enviado após a confirmação da compra</p></div></section>
 
       <section className="container faq-section"><div className="section-heading reveal"><p className="section-kicker">FAQ</p><h2>Perguntas antes do primeiro commit.</h2></div><div className="faq-list reveal">{faqs.map(([question, answer]) => <details key={question}><summary>{question}<span aria-hidden="true">+</span></summary><p>{answer}</p></details>)}</div></section>
 
